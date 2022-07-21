@@ -16,7 +16,7 @@ class ShapeController
     {
         $routeParams = $request->attributes->get('_route_params');
         $surface_area = $geometryCalculator->sum_area('triangle', ['a' => $routeParams['a'], 'b' => $routeParams['b'], 'c' => $routeParams['c']]);
-        $circumference = $geometryCalculator->sum_diameter('triangle', ['a' => $routeParams['a'], 'b' => $routeParams['b'], 'c' => $routeParams['c']]);
+        $circumference = $geometryCalculator->sum_circumference('triangle', ['a' => $routeParams['a'], 'b' => $routeParams['b'], 'c' => $routeParams['c']]);
 
         return $this->response_func(array(
             'type' => 'triangle',
@@ -37,7 +37,7 @@ class ShapeController
         $routeParams = $request->attributes->get('_route_params');
 
         $surface_area = $geometryCalculator->sum_area('circle', [$routeParams['radius']]);
-        $circumference = $geometryCalculator->sum_diameter('circle', [$routeParams['radius']]);
+        $circumference = $geometryCalculator->sum_circumference('circle', [$routeParams['radius']]);
 
 
         return $this->response_func(array(

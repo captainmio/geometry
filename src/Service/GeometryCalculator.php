@@ -23,7 +23,7 @@ class GeometryCalculator {
         return $result; ;
     }
 
-    public function sum_diameter(String $shape, Array $data) {
+    public function sum_circumference(String $shape, Array $data) {
         $result = 0;
         switch($shape) {
             case 'triangle':
